@@ -128,3 +128,62 @@ On pense avancer petit à petit.
 Étape 2 : créer le site React, la connexion Discord et le classement.
 Étape 3 : développer le bot Discord et ses commandes.
 Étape 4 : créer la partie administrateur, vérifier la sécurité et tester le projet.
+
+UML de totalement moi
+
+codearena/
+│
+├── client/                                  # Site web React
+│   ├── src/
+│   │   ├── pages/
+│   │   │   ├── Home.jsx                     # Page d'accueil
+│   │   │   ├── Challenge.jsx                # Défi du jour
+│   │   │   ├── Leaderboard.jsx              # Classement
+│   │   │   ├── Profile.jsx                  # Profil d'un participant
+│   │   │   ├── MyResolutions.jsx            # Modifier ses résultats
+│   │   │   └── Admin.jsx                    # Page administrateur
+│   │   │
+│   │   ├── components/                      # Menu, boutons, cartes...
+│   │   ├── services/                        # Appels à l'API Express
+│   │   ├── App.jsx                          # Navigation entre les pages
+│   │   └── main.jsx                         # Démarrage React
+│   │
+│   ├── index.html
+│   ├── vite.config.js
+│   └── package.json
+│
+├── server/                                  # Serveur Node.js / Express
+│   ├── src/
+│   │   ├── routes/                          # Routes de l'API
+│   │   ├── controllers/                     # Gestion des requêtes
+│   │   ├── services/
+│   │   │   ├── challengeService.js
+│   │   │   ├── resolutionService.js
+│   │   │   ├── rankingService.js
+│   │   │   └── sessionService.js
+│   │   │
+│   │   ├── repositories/
+│   │   │   └── spreadsheetRepository.js
+│   │   │
+│   │   ├── middleware/                      # Connexion et permissions
+│   │   ├── db/                              # Sessions SQLite
+│   │   ├── app.js                           # Configuration Express
+│   │   └── index.js                         # Démarrage du serveur
+│   │
+│   └── package.json
+│
+├── bot/                                    # Bot Discord
+│   ├── src/
+│   │   ├── commands/
+│   │   │   ├── defi.js                     # /tri-defi
+│   │   │   ├── classement.js               # /tri-classement
+│   │   │   └── resultat.js                 # /tri-resultat
+│   │   │
+│   │   └── index.js                        # Démarrage du bot
+│   │
+│   └── package.json
+│
+├── package.json                            # Configuration générale
+├── .env.example                            # Variables d'environnement
+├── .gitignore
+└── README.md                               # Présentation du projet
