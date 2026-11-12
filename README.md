@@ -130,7 +130,7 @@ On pense avancer petit à petit.
 Étape 4 : créer la partie administrateur, vérifier la sécurité et tester le projet.
 
 UML de totalement moi
-
+```text
 codearena/
 │
 ├── client/                                  # Site web React
@@ -187,3 +187,4 @@ codearena/
 ├── .env.example                            # Variables d'environnement
 ├── .gitignore
 └── README.md                               # Présentation du projet
+```
