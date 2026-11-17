@@ -1,1 +1,3 @@
-// Fichier destiné à organiser la navigation entre les pages React.
+export default function App() {
+  return <main style={{ minHeight: '100vh', backgroundColor: '#ffffff' }} />;
+}
