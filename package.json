@@ -1,7 +1,24 @@
 {
-  "name": "aw-project-2026-2027",
+  "name": "defi_code",
+  "version": "1.0.0",
   "private": true,
-  "workspaces": ["client", "server"],
+  "description": "Les ptits idées de conception:",
+  "homepage": "https://github.com/GizmekOrochi/aw_project-2026-2027#readme",
+  "bugs": {
+    "url": "https://github.com/GizmekOrochi/aw_project-2026-2027/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GizmekOrochi/aw_project-2026-2027.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "workspaces": [
+    "client",
+    "server"
+  ],
   "scripts": {
     "dev": "npm run dev --workspace=client",
     "dev:server": "npm run dev --workspace=server",
