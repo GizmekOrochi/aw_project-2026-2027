@@ -1,1 +1,6 @@
-// Fichier de configuration de l’application Express.
+import express from 'express';
+
+const app = express();
+app.use(express.json());
+
+export default app;
