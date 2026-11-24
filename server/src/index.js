@@ -3,6 +3,7 @@ import { openDatabase, initializeDatabase } from './db/database.js';
 
 const db = openDatabase();
 initializeDatabase(db);
+app.locals.db = db;
 
 const port = process.env.PORT || 3001;
 const server = app.listen(port, () => {
