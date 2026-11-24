@@ -63,7 +63,7 @@ Express: pour créer notre API.
 Discord API: pour la connexion avec Discord.
 discord.js: pour créer notre bot.
 Spreadsheet: pour enregistrer les données du projet.
-SQLite: pour enregistrer les sessions des utilisateurs.
+SQLite: pour enregistrer les identifiants Discord des administrateurs.
 CSS: pour faire le design du site.
 
 
@@ -82,7 +82,7 @@ server/services/ : les règles de fonctionnement du projet.
 server/repositories/ : les fichiers pour lire et modifier les données.
 server/middleware/ : les fichiers qui vérifient si une personne est connectée et si elle a le droit de faire une action.
 server/bot/ : les commandes du bot Discord.
-server/db/ : la configuration de SQLite pour les sessions.
+server/db/ : la configuration de SQLite pour les administrateurs.
 server/utils/ : les petites fonctions utiles à plusieurs endroits, comme les calculs et les dates.
 
 Le fonctionnement sera assez simple.
@@ -166,7 +166,7 @@ codearena/
 │   │   │   └── spreadsheetRepository.js
 │   │   │
 │   │   ├── middleware/                      # Connexion et permissions
-│   │   ├── db/                              # Sessions SQLite
+│   │   ├── db/                              # Administrateurs SQLite
 │   │   ├── app.js                           # Configuration Express
 │   │   └── index.js                         # Démarrage du serveur
 │   │

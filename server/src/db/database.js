@@ -19,23 +19,13 @@ export function openDatabase() {
   return db;
 }
 
-// Créer les tables de la base
 export function initializeDatabase(db) {
   db.exec(`
-    -- Créer la table des sessions
-    CREATE TABLE IF NOT EXISTS sessions (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      discord_id TEXT NOT NULL,
-      token_hash TEXT NOT NULL UNIQUE,
-      expires_at TEXT NOT NULL,
-      revoked_at TEXT,
-      created_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ', 'now'))
-    );
-
-    -- Accélérer la recherche par utilisateur
-    CREATE INDEX IF NOT EXISTS idx_sessions_discord_id ON sessions(discord_id);
-
-    -- Accélérer la recherche par date d'expiration
-    CREATE INDEX IF NOT EXISTS idx_sessions_expires_at ON sessions(expires_at);
+    BEGIN;
+    DROP TABLE IF EXISTS sessions;
+    CREATE TABLE IF NOT EXISTS admins (
+      discord_id TEXT NOT NULL PRIMARY KEY
+    ) WITHOUT ROWID;
+    COMMIT;
   `);
 }
