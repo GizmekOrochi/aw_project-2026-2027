@@ -1,5 +1,9 @@
 import { defineConfig } from 'vite';
+import { fileURLToPath } from 'node:url';
 
 export default defineConfig({
-  server: { port: 5173 }
+  envDir: fileURLToPath(new URL('../', import.meta.url)),
+  // Seules les variables publiques VITE_ sont accessibles dans React.
+  envPrefix: 'VITE_',
+  server: { port: 5173 },
 });
