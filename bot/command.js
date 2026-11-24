@@ -24,6 +24,8 @@ const command = [{
                         },
                         {
                             "name": "Mathis", "value": "Mathis miaou"
+                        },{
+                            "name": "Louis", "value": "Louis graou~"
                         }
                     ]
                 }
@@ -37,7 +39,8 @@ const command = [{
     
 
 
-];
+]; 
+
 export async function registerCommands() {
     const response = await fetch(url, {
         method: 'PUT',
@@ -47,7 +50,7 @@ export async function registerCommands() {
         },
         body: JSON.stringify(command),
     }); if (response.ok) {
-        console.log('Commande /blep enregistrée !');
+        console.log('Les commandes sont enregistrer !');
     }
     else {
         console.error('Erreur Discord :', await response.json());

@@ -42,6 +42,22 @@ client.on("interactionCreate", async (interaction) => {
                 "Écris un programme en Java qui génère un nombre aléatoire entre 1 et 100 et demande à l'utilisateur de le deviner avec Scanner, en utilisant une boucle while et des conditions if/else pour afficher « Trop petit », « Trop grand » ou « Bravo, tu as trouvé ! », tout en comptant le nombre de tentatives."
             );
         }
+if (interaction.commandName === 'abc-defi-énoncée') {
+      // Adapte le nom de la table et des colonnes selon ton schéma
+      const res = await pool.query(
+        'SELECT titre, enonce FROM defis WHERE slug = $1',
+        ['abc-defi']
+      );
+
+      const defi = res.rows[0];
+      if (!defi) {
+        await interaction.reply({
+          content: "Aucun énoncé trouvé pour ce défi.",
+          ephemeral: true,
+        });
+        return;
+      }
+    }
 
 })
 
@@ -54,7 +70,7 @@ app.get("/discord-call-back", (req, res) => {
 
 })
 
-app.listen(8080, () => {
+app.listen(5174, () => {
     client.login(process.env.DISCORD_TOKEN);
     console.log("demarer serv");
 })
