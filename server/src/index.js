@@ -1,3 +1,4 @@
+import '../../config/env.mjs';
 import app from './app.js';
 import { openDatabase, initializeDatabase } from './db/database.js';
 

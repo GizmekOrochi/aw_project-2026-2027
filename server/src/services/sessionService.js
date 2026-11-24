@@ -1,1 +1,1 @@
-// Service gérant les sessions des utilisateurs.
+// Réservé à Discord OAuth : aucune session persistée dans SQLite.
